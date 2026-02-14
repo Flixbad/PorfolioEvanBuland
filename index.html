@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evan Buland — Développeur Web</title>
+  <meta name="description" content="Portfolio d'Evan Buland, développeur web et web mobile (Bac+2). Projets, compétences et démos. À la recherche d'une entreprise pour approfondir mon expérience.">
+  <!-- Open Graph / partage réseaux -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Evan Buland — Développeur Web & Web Mobile">
+  <meta property="og:description" content="Portfolio · Bac+2 développement web. Projets, compétences, démos. En recherche d'expérience professionnelle.">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta property="og:url" content="/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Evan Buland — Développeur Web">
+  <meta name="twitter:description" content="Portfolio · Bac+2 développement web. Projets et démos.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Skip link (accessibilité clavier) -->
+  <a href="#accueil" class="skip-link" data-i18n="skip_link">Aller au contenu</a>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#accueil" class="nav-logo">EB</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#accueil" data-i18n="nav_home">Accueil</a></li>
+      <li><a href="#apropos" data-i18n="nav_about">À propos</a></li>
+      <li><a href="#competences" data-i18n="nav_skills">Compétences</a></li>
+      <li><a href="#demos" data-i18n="nav_demos">Démos</a></li>
+      <li><a href="#projets" data-i18n="nav_projects">Projets</a></li>
+      <li><a href="#tests" data-i18n="nav_tests">Tests de code</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      <li class="nav-lang-wrap">
+        <span class="nav-lang-label" aria-hidden="true">🌐</span>
+        <select class="nav-lang" id="langSelect" aria-label="Choisir la langue">
+          <option value="fr" selected>FR</option>
+          <option value="en">EN</option>
+          <option value="de">DE</option>
+          <option value="it">IT</option>
+          <option value="es">ES</option>
+        </select>
+      </li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+          <span class="icon-sun" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </span>
+          <span class="icon-moon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="accueil">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-badge" data-i18n="hero_badge">Développeur Web & Web Mobile</p>
+      <h1><span data-i18n="hero_title_prefix">Salut, je suis</span> <span class="highlight">Evan Buland</span></h1>
+      <p class="hero-desc" data-i18n="hero_desc">Bac+2 en développement web · 24 ans · Passionné par le code et les interfaces</p>
+      <div class="hero-cta">
+        <a href="#projets" class="btn btn-primary" data-i18n="hero_btn_projects">Voir mes projets</a>
+        <a href="#contact" class="btn btn-outline" data-i18n="hero_btn_contact">Me contacter</a>
+        <a href="assets/cv-evan-buland.pdf" class="btn btn-outline" download data-i18n="hero_btn_cv">Télécharger mon CV</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span data-i18n="hero_scroll">Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </header>
+
+  <!-- En ce moment : recherche d'expérience -->
+  <section class="search-block" id="recherche" aria-labelledby="search-title">
+    <div class="container">
+      <h2 class="search-block-title" id="search-title" data-i18n="search_title">En ce moment</h2>
+      <p class="search-block-text" data-i18n="search_text">Actuellement à la recherche d'expérience professionnelle, je recherche une entreprise qui serait prête à m'accueillir pour approfondir mes compétences et mes formations.</p>
+      <a href="#contact" class="btn btn-primary search-block-cta" data-i18n="search_cta">Me contacter</a>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section class="section about" id="apropos">
+    <div class="container">
+      <h2 class="section-title" data-i18n="about_title">À propos</h2>
+      <div class="about-grid">
+        <div class="about-photo">
+          <div class="about-photo-placeholder">
+            <span>EB</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <p data-i18n-html="about_p1">Je m'appelle <strong>Evan Buland</strong>, j'ai <strong>24 ans</strong> et je viens de valider une <strong>formation professionnelle d'un an</strong> pour obtenir un <strong>Bac+2 en développement web et web mobile</strong>.</p>
+          <p data-i18n="about_p2">Curieux et motivé, j'aime apprendre de nouvelles technologies et créer des sites et applications à la fois utiles et agréables à utiliser. Ce portfolio est l'endroit où je rassemble mes compétences et les projets que j'ai déjà mis en place.</p>
+          <p data-i18n-html="about_p3">N'hésitez pas à tester les <a href="#demos">démos interactives</a> plus bas pour voir ce que je sais faire en HTML, CSS et JavaScript.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compétences -->
+  <section class="section skills" id="competences">
+    <div class="container">
+      <h2 class="section-title" data-i18n="skills_title">Compétences</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">HTML5</div>
+          <h3 data-i18n="skill_html">HTML</h3>
+          <p data-i18n="skill_html_desc">Structure sémantique, accessibilité, formulaires</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">CSS3</div>
+          <h3 data-i18n="skill_css">CSS</h3>
+          <p data-i18n="skill_css_desc">Flexbox, Grid, animations, responsive design</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">JS</div>
+          <h3 data-i18n="skill_js">JavaScript</h3>
+          <p data-i18n="skill_js_desc">DOM, événements, logique métier, APIs</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📱</div>
+          <h3 data-i18n="skill_mobile">Web Mobile</h3>
+          <p data-i18n="skill_mobile_desc">Design adaptatif, PWA, bonnes pratiques</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">Symfony</div>
+          <h3 data-i18n="skill_symfony">Symfony</h3>
+          <p data-i18n="skill_symfony_desc">Framework PHP, MVC, API, Doctrine, Twig</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">Angular</div>
+          <h3 data-i18n="skill_angular">Angular</h3>
+          <p data-i18n="skill_angular_desc">Framework frontend, TypeScript, composants, services</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">IA</div>
+          <h3 data-i18n="skill_ia">Technologies IA</h3>
+          <p data-i18n="skill_ia_desc">Cursor, assistants IA, outils de développement assisté</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Démos interactives -->
+  <section class="section demos" id="demos">
+    <div class="container">
+      <h2 class="section-title" data-i18n="demos_title">Testez directement sur le site</h2>
+      <p class="section-subtitle" data-i18n="demos_subtitle">Quelques mini-applications pour illustrer mes compétences en JavaScript.</p>
+
+      <div class="demos-grid">
+        <div class="demo-card">
+          <h3 data-i18n="demo_calc">Calculatrice</h3>
+          <div class="calculator">
+            <input type="text" class="calculator-display" id="calcDisplay" readonly value="0">
+            <div class="calculator-keys">
+              <button class="calc-btn calc-clear" data-action="clear">C</button>
+              <button class="calc-btn calc-operator" data-action="operator" data-value="%">%</button>
+              <button class="calc-btn calc-operator" data-action="operator" data-value="/">/</button>
+              <button class="calc-btn calc-operator" data-action="operator" data-value="*">×</button>
+              <button class="calc-btn" data-action="number" data-value="7">7</button>
+              <button class="calc-btn" data-action="number" data-value="8">8</button>
+              <button class="calc-btn" data-action="number" data-value="9">9</button>
+              <button class="calc-btn calc-operator" data-action="operator" data-value="-">−</button>
+              <button class="calc-btn" data-action="number" data-value="4">4</button>
+              <button class="calc-btn" data-action="number" data-value="5">5</button>
+              <button class="calc-btn" data-action="number" data-value="6">6</button>
+              <button class="calc-btn calc-operator" data-action="operator" data-value="+">+</button>
+              <button class="calc-btn" data-action="number" data-value="1">1</button>
+              <button class="calc-btn" data-action="number" data-value="2">2</button>
+              <button class="calc-btn" data-action="number" data-value="3">3</button>
+              <button class="calc-btn calc-equals" data-action="equals" rowspan="2">=</button>
+              <button class="calc-btn calc-zero" data-action="number" data-value="0">0</button>
+              <button class="calc-btn" data-action="number" data-value=".">.</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <h3 data-i18n="demo_todo">Liste de tâches</h3>
+          <div class="todo-app">
+            <form class="todo-form" id="todoForm">
+              <input type="text" class="todo-input" id="todoInput" data-i18n-placeholder="demo_todo_placeholder" placeholder="Nouvelle tâche..." autocomplete="off">
+              <button type="submit" class="todo-add" data-i18n="demo_todo_add">Ajouter</button>
+            </form>
+            <ul class="todo-list" id="todoList"></ul>
+            <div class="todo-stats" id="todoStats">0 tâche(s)</div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <h3 data-i18n="demo_counter">Compteur</h3>
+          <div class="counter-app">
+            <div class="counter-value" id="counterValue">0</div>
+            <div class="counter-buttons">
+              <button class="counter-btn" id="counterMinus">−</button>
+              <button class="counter-btn counter-reset" id="counterReset">Reset</button>
+              <button class="counter-btn" id="counterPlus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <h3>°C ↔ °F</h3>
+          <div class="converter-app">
+            <div class="converter-row">
+              <label>Celsius</label>
+              <input type="number" id="celsiusInput" placeholder="0" step="0.1">
+            </div>
+            <div class="converter-row">
+              <label>Fahrenheit</label>
+              <input type="number" id="fahrenheitInput" placeholder="32" step="0.1">
+            </div>
+            <p class="converter-hint" data-i18n="demo_converter_hint">Modifiez une valeur pour convertir automatiquement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projets -->
+  <section class="section projects" id="projets">
+    <div class="container">
+      <h2 class="section-title" data-i18n="projects_title">Projets & sites réalisés</h2>
+      <p class="section-subtitle" data-i18n="projects_subtitle">Quelques sites et applications que j'ai déjà mis en place.</p>
+
+      <article class="project-card project-card--featured">
+        <span class="project-badge" data-i18n="project_badge_soon">En cours de construction</span>
+        <div class="project-image project-image--featured">
+          <span>RivoxStreet</span>
+        </div>
+        <div class="project-content">
+          <h3>RivoxStreet</h3>
+          <p class="project-tagline" data-i18n="project_rivox_tagline">Ma marque de vêtements pour motards</p>
+          <p data-i18n="project_rivox_desc">Site e-commerce en cours de développement : vente de vêtements et accessoires pour la communauté moto. Catalogue, panier, paiement et identité de marque.</p>
+          <div class="project-tech">
+            <span>Next.js</span>
+            <span>E-commerce</span>
+            <span data-i18n="project_coming">À venir</span>
+          </div>
+          <span class="project-link project-link--soon" data-i18n="project_soon_online">Bientôt en ligne</span>
+        </div>
+      </article>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/netmore-hero.png" alt="Capture d'écran du site NetMore Digital — hero avec code et boutons d'action" />
+          </div>
+          <div class="project-content">
+            <h3>NetMore Digital</h3>
+            <p data-i18n="project_netmore_desc">Site de micro entreprise : développement web sur mesure, projets, services, blog, devis et décoration intérieure.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Netlify</span>
+            </div>
+            <a href="https://netmoredigital.netlify.app/" class="project-link" target="_blank" rel="noopener" data-i18n="project_view_site">Voir le site →</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/autoexotic-hero.png" alt="Capture du site Auto Exotic — garage de customisation automobile premium" />
+          </div>
+          <div class="project-content">
+            <h3>Auto Exotic</h3>
+            <p data-i18n="project_auto_desc">Garage de customisation automobile haut de gamme. Site vitrine avec services, réalisations, avant/après, FAQ et contact.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Netlify</span>
+            </div>
+            <a href="https://autoexoticstorylife.netlify.app/" class="project-link" target="_blank" rel="noopener" data-i18n="project_view_site">Voir le site →</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/locpro-hero.png" alt="Capture du site LocPro — location de véhicules professionnelle" />
+          </div>
+          <div class="project-content">
+            <h3>LocPro</h3>
+            <p data-i18n="project_locpro_desc">Prototype location de véhicules pro. Hero, flotte, tarifs, services et contact. Thème sombre & rouge.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Netlify</span>
+            </div>
+            <a href="https://locpro.netlify.app/" class="project-link" target="_blank" rel="noopener" data-i18n="project_view_site">Voir le site →</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/tatoocartel-hero.png" alt="Capture du site TatooCartel — salon de tatouage, hero L'art sur votre peau" />
+          </div>
+          <div class="project-content">
+            <h3>TatooCartel</h3>
+            <p data-i18n="project_tatoo_desc">Prototype salon de tatouage. Hero « L'art sur votre peau », catalogue par zone du corps, contact. Thème sombre & doré.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Netlify</span>
+            </div>
+            <a href="https://tattocartel.netlify.app/" class="project-link" target="_blank" rel="noopener" data-i18n="project_view_site">Voir le site →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tests de code (Symfony & Angular) -->
+  <section class="section code-tests" id="tests">
+    <div class="container">
+      <h2 class="section-title" data-i18n="tests_title">Tests de code</h2>
+      <p class="section-subtitle" data-i18n="tests_subtitle">Quelques QCM pour illustrer mes connaissances Symfony et Angular. Tout fonctionne en HTML, CSS et JavaScript.</p>
+
+      <div class="tests-tabs">
+        <button type="button" class="tests-tab tests-tab--active" data-tab="symfony" aria-pressed="true">Symfony</button>
+        <button type="button" class="tests-tab" data-tab="angular" aria-pressed="false">Angular</button>
+      </div>
+
+      <!-- Quiz Symfony -->
+      <div class="tests-panel tests-panel--active" id="panel-symfony">
+        <form class="quiz-form" id="quizSymfony">
+          <div class="quiz-question">
+            <p class="quiz-label">Quel fichier configure les routes dans une application Symfony classique ?</p>
+            <label class="quiz-option"><input type="radio" name="s1" value="a"> <span>config/routes.yaml</span></label>
+            <label class="quiz-option"><input type="radio" name="s1" value="b"> <span>src/Routes.php</span></label>
+            <label class="quiz-option"><input type="radio" name="s1" value="c"> <span>routes/config.json</span></label>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-label">Quel outil Symfony permet de gérer la base de données (schéma, migrations) ?</p>
+            <label class="quiz-option"><input type="radio" name="s2" value="a"> <span>Doctrine</span></label>
+            <label class="quiz-option"><input type="radio" name="s2" value="b"> <span>Eloquent</span></label>
+            <label class="quiz-option"><input type="radio" name="s2" value="c"> <span>Propel</span></label>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-label">En Symfony, le moteur de templates par défaut est :</p>
+            <label class="quiz-option"><input type="radio" name="s3" value="a"> <span>Blade</span></label>
+            <label class="quiz-option"><input type="radio" name="s3" value="b"> <span>Twig</span></label>
+            <label class="quiz-option"><input type="radio" name="s3" value="c"> <span>Jinja</span></label>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-label">Quelle commande permet de créer un nouveau contrôleur avec la console Symfony ?</p>
+            <label class="quiz-option"><input type="radio" name="s4" value="a"> <span>make:controller</span></label>
+            <label class="quiz-option"><input type="radio" name="s4" value="b"> <span>generate:controller</span></label>
+            <label class="quiz-option"><input type="radio" name="s4" value="c"> <span>new:controller</span></label>
+          </div>
+          <button type="submit" class="btn btn-primary" data-i18n="tests_btn_symfony">Voir mon score Symfony</button>
+        </form>
+        <div class="quiz-result" id="resultSymfony" aria-live="polite"></div>
+      </div>
+
+      <!-- Quiz Angular -->
+      <div class="tests-panel" id="panel-angular">
+        <form class="quiz-form" id="quizAngular">
+          <div class="quiz-question">
+            <p class="quiz-label">Quel langage est utilisé par défaut pour coder une application Angular ?</p>
+            <label class="quiz-option"><input type="radio" name="a1" value="a"> <span>JavaScript</span></label>
+            <label class="quiz-option"><input type="radio" name="a1" value="b"> <span>TypeScript</span></label>
+            <label class="quiz-option"><input type="radio" name="a1" value="c"> <span>Dart</span></label>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-label">Pour afficher une propriété du composant dans le template Angular, on utilise :</p>
+            <label class="quiz-option"><input type="radio" name="a2" value="a"> <span><code>&#123;&#123; maVariable &#125;&#125;</code></span></label>
+            <label class="quiz-option"><input type="radio" name="a2" value="b"> <span><code>[[ maVariable ]]</code></span></label>
+            <label class="quiz-option"><input type="radio" name="a2" value="c"> <span><code>(maVariable)</code></span></label>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-label">Quel décorateur permet d'injecter un service dans un composant Angular ?</p>
+            <label class="quiz-option"><input type="radio" name="a3" value="a"> <span>@Injectable()</span></label>
+            <label class="quiz-option"><input type="radio" name="a3" value="b"> <span>@Inject()</span></label>
+            <label class="quiz-option"><input type="radio" name="a3" value="c"> <span>Injecter dans le constructeur (dependency injection)</span></label>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-label">Le binding (ngModel) pour un champ formulaire bidirectionnel nécessite :</p>
+            <label class="quiz-option"><input type="radio" name="a4" value="a"> <span>FormsModule</span></label>
+            <label class="quiz-option"><input type="radio" name="a4" value="b"> <span>ReactiveModule</span></label>
+            <label class="quiz-option"><input type="radio" name="a4" value="c"> <span>NgModel seul suffit</span></label>
+          </div>
+          <button type="submit" class="btn btn-primary" data-i18n="tests_btn_angular">Voir mon score Angular</button>
+        </form>
+        <div class="quiz-result" id="resultAngular" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <h2 class="section-title" data-i18n="contact_title">Contact</h2>
+      <p class="section-subtitle" data-i18n="contact_subtitle">Une question ou un projet ? N'hésite pas à me joindre.</p>
+      <div class="contact-content">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjgewwko" method="POST">
+          <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio — Evan Buland">
+          <input type="hidden" name="_language" value="fr">
+          <div class="form-group">
+            <label for="contactName" data-i18n="contact_name">Nom</label>
+            <input type="text" id="contactName" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail" data-i18n="contact_email">Email</label>
+            <input type="email" id="contactEmail" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage" data-i18n="contact_message">Message</label>
+            <textarea id="contactMessage" name="message" rows="5" required></textarea>
+          </div>
+          <p class="form-status" id="contactFormStatus" aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary" id="contactSubmitBtn" data-i18n="contact_submit">Envoyer</button>
+        </form>
+        <div class="contact-info">
+          <p><strong>Evan Buland</strong></p>
+          <p data-i18n="contact_role">Développeur Web & Web Mobile · Bac+2</p>
+          <p class="contact-links">
+            <a href="assets/cv-evan-buland.pdf" download data-i18n="contact_cv">CV (PDF)</a>
+            <span class="contact-links-sep">·</span>
+            <a href="https://github.com/Flixbad" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <span class="contact-links-sep">·</span>
+            <a href="https://www.linkedin.com/in/evan-buland/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p data-i18n="footer_text">© 2025 Evan Buland · Portfolio · Bac+2 Développement Web & Web Mobile</p>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

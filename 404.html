@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page non trouvée — Evan Buland</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .error-page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
+    .error-robot-wrap { margin-bottom: 1rem; animation: robot-float 3s ease-in-out infinite; }
+    .error-robot { width: 80px; height: 80px; }
+    .error-robot .robot-body { fill: var(--accent-muted); stroke: var(--accent); stroke-width: 2; }
+    .error-robot .robot-head { fill: var(--accent-muted); stroke: var(--accent); stroke-width: 2; }
+    .error-robot .robot-eye { fill: var(--accent); }
+    .error-robot .robot-eye-left { animation: robot-blink 4s ease-in-out infinite; }
+    .error-robot .robot-eye-right { animation: robot-blink 4s ease-in-out 0.1s infinite; }
+    .error-robot .robot-antenna { stroke: var(--accent); stroke-width: 2; fill: none; transform-origin: 50% 100%; animation: robot-antenna 1.5s ease-in-out infinite; }
+    .error-robot .robot-antenna-ball { fill: var(--accent); }
+    @keyframes robot-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes robot-blink { 0%, 45%, 55%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.1); } }
+    @keyframes robot-antenna { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
+    .error-page h1 { font-size: clamp(4rem, 15vw, 8rem); font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
+    .error-page p { color: var(--text-muted); margin-bottom: 1.5rem; max-width: 360px; }
+    .error-page .btn { margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">EB</a>
+    <a href="index.html" class="btn btn-outline" style="margin-left: auto; margin-right: 1rem;">Accueil</a>
+  </nav>
+
+  <main class="error-page">
+    <div class="error-robot-wrap" aria-hidden="true">
+      <svg class="error-robot" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <!-- Antenne -->
+        <path class="robot-antenna" d="M32 8 L32 2" />
+        <circle class="robot-antenna-ball" cx="32" cy="2" r="2" />
+        <!-- Tête -->
+        <rect class="robot-head" x="18" y="10" width="28" height="22" rx="4" />
+        <!-- Yeux -->
+        <ellipse class="robot-eye robot-eye-left" cx="26" cy="20" rx="3" ry="4" />
+        <ellipse class="robot-eye robot-eye-right" cx="38" cy="20" rx="3" ry="4" />
+        <!-- Bouche (petite ligne) -->
+        <line x1="26" y1="28" x2="38" y2="28" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" />
+        <!-- Corps -->
+        <rect class="robot-body" x="20" y="34" width="24" height="26" rx="4" />
+        <!-- Boutons sur le torse -->
+        <circle cx="28" cy="44" r="2" fill="var(--accent)" opacity="0.8" />
+        <circle cx="32" cy="44" r="2" fill="var(--accent)" opacity="0.8" />
+        <circle cx="36" cy="44" r="2" fill="var(--accent)" opacity="0.8" />
+      </svg>
+    </div>
+    <h1 aria-hidden="true">404</h1>
+    <p><strong>Page non trouvée</strong><br>La page que vous cherchez n’existe pas ou a été déplacée.</p>
+    <a href="index.html" class="btn btn-primary">Retour à l’accueil</a>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Evan Buland · Portfolio</p>
+    </div>
+  </footer>
+</body>
+</html>

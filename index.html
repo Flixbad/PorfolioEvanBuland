@@ -158,6 +158,11 @@
           <p data-i18n="skill_angular_desc">Framework frontend, TypeScript, composants, services</p>
         </div>
         <div class="skill-card">
+          <div class="skill-icon">API</div>
+          <h3 data-i18n="skill_api">API / Backend</h3>
+          <p data-i18n="skill_api_desc">REST, fetch, consommation d’APIs, Symfony API Platform</p>
+        </div>
+        <div class="skill-card">
           <div class="skill-icon">IA</div>
           <h3 data-i18n="skill_ia">Technologies IA</h3>
           <p data-i18n="skill_ia_desc">Cursor, assistants IA, outils de développement assisté</p>
@@ -236,6 +241,26 @@
               <input type="number" id="fahrenheitInput" placeholder="32" step="0.1">
             </div>
             <p class="converter-hint" data-i18n="demo_converter_hint">Modifiez une valeur pour convertir automatiquement.</p>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <h3 data-i18n="demo_weather">Météo (API)</h3>
+          <div class="weather-app">
+            <form class="weather-form" id="weatherForm">
+              <input type="text" class="weather-input" id="weatherCity" data-i18n-placeholder="demo_weather_placeholder" placeholder="Ville (ex. Paris)" autocomplete="off">
+              <button type="submit" class="weather-btn" id="weatherBtn" data-i18n="demo_weather_btn">Actualiser</button>
+            </form>
+            <div class="weather-result" id="weatherResult" aria-live="polite">
+              <p class="weather-loading" id="weatherLoading" hidden data-i18n="demo_weather_loading">Chargement...</p>
+              <p class="weather-error" id="weatherError" hidden data-i18n="demo_weather_error">Ville introuvable ou erreur réseau.</p>
+              <div class="weather-data" id="weatherData" hidden>
+                <p class="weather-city" id="weatherCityName"></p>
+                <p class="weather-temp"><span id="weatherTempValue"></span> °C</p>
+                <p class="weather-condition" id="weatherCondition"></p>
+                <p class="weather-meta"><span data-i18n="weather_humidity">Humidité</span>: <span id="weatherHumidity"></span>% · <span data-i18n="weather_wind">Vent</span>: <span id="weatherWind"></span> km/h</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTodo();
   initCounter();
   initConverter();
+  initWeather();
   initContactForm();
   initCodeTests();
   initScrollEffects();
@@ -235,6 +236,126 @@ function initConverter() {
     } else {
       celsiusInput.value = '';
     }
+  });
+}
+
+// ===== Météo (API Open-Meteo) =====
+const WEATHER_CODE_KEYS = {
+  0: 'weather_clear',
+  1: 'weather_mainly_clear',
+  2: 'weather_partly_cloudy',
+  3: 'weather_overcast',
+  45: 'weather_fog',
+  48: 'weather_fog',
+  51: 'weather_drizzle',
+  53: 'weather_drizzle',
+  55: 'weather_drizzle',
+  61: 'weather_rain',
+  63: 'weather_rain',
+  65: 'weather_rain',
+  71: 'weather_snow',
+  73: 'weather_snow',
+  75: 'weather_snow',
+  80: 'weather_showers',
+  81: 'weather_showers',
+  82: 'weather_showers',
+  85: 'weather_snow_showers',
+  86: 'weather_snow_showers',
+  95: 'weather_thunderstorm',
+  96: 'weather_thunderstorm',
+  99: 'weather_thunderstorm'
+};
+
+function getWeatherConditionKey(code) {
+  return WEATHER_CODE_KEYS[code] || 'weather_overcast';
+}
+
+function initWeather() {
+  const form = document.getElementById('weatherForm');
+  const cityInput = document.getElementById('weatherCity');
+  const btn = document.getElementById('weatherBtn');
+  const loadingEl = document.getElementById('weatherLoading');
+  const errorEl = document.getElementById('weatherError');
+  const dataEl = document.getElementById('weatherData');
+  const cityNameEl = document.getElementById('weatherCityName');
+  const tempEl = document.getElementById('weatherTempValue');
+  const conditionEl = document.getElementById('weatherCondition');
+  const humidityEl = document.getElementById('weatherHumidity');
+  const windEl = document.getElementById('weatherWind');
+
+  if (!form || !cityInput || !dataEl) return;
+
+  function getT(key) {
+    const lang = document.documentElement.lang || 'fr';
+    return (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) || key;
+  }
+
+  function setLoading(loading) {
+    loadingEl.hidden = !loading;
+    errorEl.hidden = true;
+    dataEl.hidden = loading;
+    if (btn) btn.disabled = loading;
+  }
+
+  function setError() {
+    loadingEl.hidden = true;
+    errorEl.hidden = false;
+    dataEl.hidden = true;
+    if (btn) btn.disabled = false;
+  }
+
+  function showWeather(name, temp, code, humidity, wind) {
+    loadingEl.hidden = true;
+    errorEl.hidden = true;
+    dataEl.hidden = false;
+    if (btn) btn.disabled = false;
+    cityNameEl.textContent = name;
+    tempEl.textContent = Math.round(temp);
+    conditionEl.textContent = getT(getWeatherConditionKey(code));
+    humidityEl.textContent = humidity;
+    windEl.textContent = wind;
+  }
+
+  async function fetchWeather(cityName) {
+    const name = (cityName || 'Paris').trim() || 'Paris';
+    setLoading(true);
+
+    try {
+      const geoRes = await fetch(
+        `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(name)}&count=1`
+      );
+      const geoData = await geoRes.json();
+      if (!geoData.results || geoData.results.length === 0) {
+        setError();
+        return;
+      }
+      const { latitude, longitude, name: foundName } = geoData.results[0];
+
+      const weatherRes = await fetch(
+        `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m`
+      );
+      const weatherData = await weatherRes.json();
+      if (!weatherData.current) {
+        setError();
+        return;
+      }
+
+      const c = weatherData.current;
+      showWeather(
+        foundName,
+        c.temperature_2m,
+        c.weather_code,
+        c.relative_humidity_2m,
+        Math.round(c.wind_speed_10m)
+      );
+    } catch {
+      setError();
+    }
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    fetchWeather(cityInput.value);
   });
 }
 

@@ -348,9 +348,16 @@ a:hover {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, var(--accent-muted), transparent 60%);
+  background-image: url("../assets/hero-code-bg.svg"), radial-gradient(ellipse 80% 50% at 50% -20%, var(--accent-muted), transparent 60%);
+  background-size: cover, 100% 100%;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   pointer-events: none;
   animation: gradientShift 8s ease-in-out infinite;
+}
+
+[data-theme="light"] .hero-bg {
+  background-image: url("../assets/hero-code-bg-light.svg"), radial-gradient(ellipse 90% 45% at 50% -15%, rgba(0, 143, 107, 0.08), transparent 55%);
 }
 
 .hero-content {

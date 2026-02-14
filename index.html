@@ -247,9 +247,9 @@
         <div class="demo-card">
           <h3 data-i18n="demo_weather">Météo (API)</h3>
           <div class="weather-app">
-            <form class="weather-form" id="weatherForm">
+            <form class="weather-form" id="weatherForm" action="javascript:void(0);" method="get">
               <input type="text" class="weather-input" id="weatherCity" data-i18n-placeholder="demo_weather_placeholder" placeholder="Ville (ex. Paris)" autocomplete="off">
-              <button type="submit" class="weather-btn" id="weatherBtn" data-i18n="demo_weather_btn">Actualiser</button>
+              <button type="button" class="weather-btn" id="weatherBtn" data-i18n="demo_weather_btn">Actualiser</button>
             </form>
             <div class="weather-result" id="weatherResult" aria-live="polite">
               <p class="weather-loading" id="weatherLoading" hidden data-i18n="demo_weather_loading">Chargement...</p>

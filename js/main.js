@@ -357,6 +357,12 @@ function initWeather() {
     e.preventDefault();
     fetchWeather(cityInput.value);
   });
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      fetchWeather(cityInput.value);
+    });
+  }
 }
 
 // ===== Formulaire de contact =====
